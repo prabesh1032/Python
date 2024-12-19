@@ -1,5 +1,5 @@
 import pandas as pd
-'''
+''''
 s = pd.Series([1,2,3,4,6,7])
 
 data={ 
@@ -9,7 +9,22 @@ data={
 df=pd.DataFrame(data)
 print(s)
 print(df)
-''''''
+'''
+# Creating a DataFrame
+data = {
+    'Name': ['John', 'Anna', 'Smith', 'Matt'],
+    'Age': [28, 24, 35, 42],
+    'City': ['New York', 'Paris', 'London', 'Berlin']
+}
+df = pd.DataFrame(data)
+print(df)
+# Using head to get the first three rows
+print(df.head(3))
+
+# Using tail to get the last two rows
+print(df.tail(2))
+
+'''
 s = pd.Series([1,2,3,4,6,7],index=['a','b','c','d','f','g'])
 print("/n custome index::/n",s)
 
@@ -24,7 +39,7 @@ print("dataframe from dictionary:\n",df)
 print("only age:\n",df['Age'])
 print("age and name are:\n",df[['Age','Name']])
 '''
-'''
+
 #selecting rows by index
 data={
     'Name':['Alice','Bob','ram','david'],
@@ -41,7 +56,7 @@ df['salary']=[7000,3000,5000,6000]
 print("\n Dataframe with salary Column:\n",df)
 filtered_df=(df[df['Age']>30])
 print("\n filtered Dataframe (age>30:\n)",filtered_df)
-''''''
+'''
 data={
     'Name':['Alice','Bob','ram','david'],
     'Age':[25,30,40,55],
@@ -111,7 +126,7 @@ right_join=df1.join(df2,how='right')
 print("left join:",left_join)
 print("right join:",right_join)
 # print("outer join:",outer_join)
-'''
+
 data={
     'Name':['Alice','Bob','ram','david',None,"pranish","jagat"],
     'Age':[25,30,40,55,65,None,45],
@@ -135,3 +150,4 @@ print("\n filtered Dataframe (Age>30):")
 print(filtered_df)
 filtered_df.to_csv("filtered_output.csv",index=False)
 print("\nfiltered Dataframe written to 'filltered_output.csv")
+'''

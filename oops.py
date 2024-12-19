@@ -328,7 +328,7 @@ class Simplecalc(Calculator):
 sc=Simplecalc()
 print("addition is",sc.add(9,4))
 print("subtraction is",sc.sub(9,4))
-'''''''''''''
+'''
 #Enumeration
 from enum import Enum
 class Direction(Enum):
@@ -345,8 +345,7 @@ if Direction.north==Direction.west:
     print("same direction")    
 else:
     print("difference direction")
-        '''''
-'''''
+'''
 
 #class var vs instanve var and 
 

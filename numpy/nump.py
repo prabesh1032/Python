@@ -13,13 +13,13 @@ print(np.empty((1,3)))
 print(np.arange(0,10,2))
 print(np.linspace(0,1,5))'''
 
-
-'''#Random 
+'''
+#Random 
 #random value between 0 and 1
 print(np.random.random((2,3)))
 #array with random integer
-print(np.random.randint(1,10,(2,3)))'''
-'''#creating array from string
+print(np.random.randint(1,10,(2,3)))
+#creating array from string
 num_string="1,2,3,4,5,7,8,6,4,2"
 num_array=np.array(num_string.split(','),dtype=int)
 print("numeric array",num_array)'''
@@ -28,8 +28,8 @@ print("numeric array",num_array)'''
 '''#1
 print(np.array([1,2,3,4]))
 #2
-print(np.array([[1,2,3],[2,5,8]]))'''
-'''#3
+print(np.array([[1,2,3],[2,5,8]]))''''''
+#3
 print(np.array([[[1,2,3],[2,3,4]],[[6,7,8],[4,6,8]]]))
 array=np.array([[[1,2,3],[2,3,4]],[[6,7,8],[4,6,8]]])
 print("array:\n",array)
@@ -63,28 +63,35 @@ print("element at (0,1)",array2[0,1])
 print(" emement at (1,3)",array2[1,3])
 #3d
 array3=np.array([
-    [[1,2,3,4,5],[6,7,8,9,10]],
-    [[11,12,13,14,15],[16,17,18,19,20]]
+    [[1,2,3],[4,5,6]],
+    [[7,8,9],[10,11,12]]
     ])
 print("3d array",array3)
 print("element at (0,1,2)",array3[0,1,2])
 print(" emement at (1,0,1)",array3[1,0,1])
 
+
 #slicing
 #1d
+array1=np.array([1,2,3,4,5])
 print("first three element",array1[:3])
 print("element from index 2 to end",array1[2:])
 print("every 2nd element",array1[::2])
 #2d
+array2=np.array([[1,2,3,4,5],[6,7,8,9,10]])
 print("first row",array2[0,:])
 print("first column",array2[:,0])
 print("subarray",array2[0:2,1:3])
 #3d
+array3=np.array([
+    [[1,2,3],[4,5,6]],
+    [[7,8,9],[10,11,12]]
+    ])
 print("first block",array3[0,:,:])
 print("second row in each block",array3[:,1,:])
 print("third column in each row\n",array3[:,:,2])
-'''
-'''
+
+
 #original
 original = np.array([1,2,3,4,5])
 copy= original.copy()
@@ -113,6 +120,7 @@ print("after broadcasting and adding:",array_1d+array_2d)
 #iteration in 2D
 array_2d=np.array([[2,3,4,5,6],[3,6,8,6,2]])
 for row in array_2d:
+    print("row:",row)
     for i in row:
         print(i)
 
@@ -128,12 +136,10 @@ array_2d=np.array([[2,3,4,5,6],[3,6,8,6,2]])
 for element in np.nditer(array_2d,op_flags=["readwrite"]):
     element[...]=element*3
     print("modified array is::",array_2d)
-    '''
 
 
 
 #sorting
-'''
 array=np.array([2,44,6,34,5,89,0,54,678])
 array.sort() #or np.sort()
 print("element after sort:",array)
@@ -142,9 +148,17 @@ array_2d=np.array([[2,3,43,5,6],[3,6,8,6,2]])
 sorted_element_row=np.sort(array_2d,axis=1)
 print("origin :",array_2d)
 print("after sorted:",sorted_element_row)
-'''
+
+arr_2d = np.array([[5, 2, 9], [4, 7, 6]])
+# Sort each row
+sorted_arr_rows = np.sort(arr_2d, axis=1)
+# Sort each column
+sorted_arr_cols = np.sort(arr_2d, axis=0)
+
+print("Row-wise sorted:\n", sorted_arr_rows)
+print("Column-wise sorted:\n", sorted_arr_cols)
 #argsort
-'''array=np.array([2,44,6,34,5,89,0,54,678])
+array=np.array([2,44,6,34,5,89,0,54,678])
 sorted_index=np.argsort(array)
 sorted_array_by_indics=array[sorted_index]
 print("original array",array)
@@ -196,8 +210,10 @@ print("persintile:",np.percentile(array,25))#Q25'''
 hist,bin_edges=np.histogram(data,bins=10)
 print("histogram:",hist)
 print("bin_edges:",bin_edges)'''
+'''
 
 ##correlation coefficient
 x=np.array([1,2,3,4,5,56])
 y=np.array([3,4,6,7,4,22])
 print("correlation coffecient is:",np.corrcoef(x,y))
+'''
